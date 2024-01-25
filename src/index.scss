@@ -49,6 +49,7 @@ body {
 .Sidebar {
     height: 100vh;
     overflow-y: auto;
+    
     background: linear-gradient(117deg, var(--blue0) 0%, var(--blue1) 50%, var(--blue2) 100%);
     &::-webkit-scrollbar {
         width: 0px;
