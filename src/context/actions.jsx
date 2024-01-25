@@ -1,0 +1,27 @@
+export const CLICK_BUTTON_A = "CLICK_BUTTON_A";
+export const CLICK_BUTTON_B = "CLICK_BUTTON_B";
+export const CLICK_BUTTON_C = "CLICK_BUTTON_C";
+export const CLICK_BUTTON_D = "CLICK_BUTTON_D";
+export const CLICK_BUTTON_E = "CLICK_BUTTON_E";
+export const GEMBA_BUTTON_UNLOCK = "GEMBA_BUTTON_UNLOCK";
+
+
+
+
+
+
+// export const LOGIN_START = "LOGIN_START"
+// export const LOGIN_SUCCESS = "LOGIN_SUCCESS"
+// export const LOGIN_FAILED = "LOGIN_FAILED"
+
+// export const SIGNUP_START = "LOGIN_START"
+// export const SIGNUP_SUCCESS = "LOGIN_SUCCESS"
+// export const SIGNUP_FAILED = "LOGIN_FAILED"
+
+// export const UPDATE_USER_START = "UPDATE_USER_START"
+// export const UPDATE_USER_SUCCESS = "UPDATE_USER_SUCCESS"
+// export const UPDATE_USER_FAILED = "UPDATE_USER_FAILED"
+
+// export const LOGOUT_USER = "LOGOUT_USER"
+
+// export const NEW_ANNOUNCEMENT_ADDED = "NEW_ANNOUNCEMENT_ADDED"
