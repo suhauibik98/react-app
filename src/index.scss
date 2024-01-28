@@ -49,14 +49,45 @@ body {
 .Sidebar {
     height: 100vh;
     overflow-y: auto;
-    
+
     background: linear-gradient(117deg, var(--blue0) 0%, var(--blue1) 50%, var(--blue2) 100%);
     &::-webkit-scrollbar {
         width: 0px;
         height: 0px;
     }
+    &:before {
+    }
 }
+.ji {
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        background-color: #024e7200;
+        left: 40px;
+        z-index: 1;
+        width: 480px;
+        height: 100%;
+        border-radius: 0;
+        background-image: radial-gradient(
+            circle at 1016px 475px,
+            rgb(0 0 0 / 0%) 0,
+            rgba(0, 0, 0, 0) 749px,
+            var(--blue1) 0
 
+        );
+        color: #fff;
+        &:before{
+            display: block;
+            position: absolute;
+            background-color: #024e7200;
+            left: 400px;
+            z-index: 1;
+            width: 480px;
+            height: 100%;
+        }
+    }
+}
 .MenuIcon {
     position: absolute;
     background: linear-gradient(117deg, var(--blue0) 0%, var(--blue1) 50%, var(--blue2) 100%);
@@ -85,7 +116,6 @@ img {
 }
 .active {
     background: #3fa686;
-    
     background: linear-gradient(90deg, #3fa686 0%, #129e9d 50%, #047f9f 100%);
 }
 nav ul .NavItem:hover {

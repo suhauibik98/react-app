@@ -31,7 +31,7 @@ const addIconLock =(key)=>{
 }
 const goTopath=(value)=>{
   if (value ===  "/Test" && state8){
-    lockIcon = <span className="right-5 absolute"> <LockIcon fontSize="large"></LockIcon></span>    
+    lockIcon = <span className="right-5 absolute "> <LockIcon fontSize="large"></LockIcon></span>    
     return location.pathname ;
   }
   else{
@@ -66,6 +66,8 @@ const swipper = (key)=>{
  
  
 }
+
+
 useEffect(()=>{
   if(state0&& state1&& state2 &&state3 &&state4&& state5 &&state6 &&state7){
   setState8(false)

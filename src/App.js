@@ -51,7 +51,7 @@ function App() {
     <>
       <div className="layout">
         <Router>
-          <div className={`${""}  ${sideWidth}`}>
+          <div className={`${"ji"}  ${sideWidth}`}>
             <Sidebar sendToProps={handelSetToggle} />
           </div>
           <div className={`${""}  ${bodyWidth}`}>

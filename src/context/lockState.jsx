@@ -11,7 +11,7 @@ import {
   CLICK_BUTTON_B,
   CLICK_BUTTON_C,
   CLICK_BUTTON_D,
-  GEMBA_BUTTON_UNLOCK
+  GEMBA_BUTTON_UNLOCK,
 } from "./actions";
 const LockContext = createContext();
 const initialState = {
@@ -19,7 +19,7 @@ const initialState = {
   b: false,
   c: false,
   d: false,
-  unLock:false
+  unLock: false,
 };
 
 export const LockProvider = ({ children }) => {
@@ -45,36 +45,33 @@ export const LockProvider = ({ children }) => {
     dispatch({ type: GEMBA_BUTTON_UNLOCK });
   };
 
-  const handelShowQ = () => {
+  const handelShowQ =  () => {
     if (stats.a && stats.b && stats.c && stats.d) {
       setQ(true);
-    }  };
+    }
+  };
 
   useEffect(() => {
     handelShowQ();
-
   }, [stats]);
 
   const handleLockChange = () => {
     setLock(true);
   };
 
+  const valueToSend = {
+    isLock,
+    isQ,
+    handleLockChange,
+    ...stats,
+    handelclick_A,
+    handelclick_B,
+    handelclick_C,
+    handelclick_D,
+    GEMBA_UNLOCK,
+  };
   return (
-    <LockContext.Provider
-      value={{
-        isLock,
-        isQ,
-        handleLockChange,
-        ...stats,
-        handelclick_A,
-        handelclick_B,
-        handelclick_C,
-        handelclick_D,
-        GEMBA_UNLOCK,
-      }}
-    >
-      {children}
-    </LockContext.Provider>
+    <LockContext.Provider value={valueToSend}>{children}</LockContext.Provider>
   );
 };
 
