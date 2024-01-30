@@ -89,7 +89,7 @@ useEffect(()=>{
         </div>
       )}
       {open && (
-        <div className="Sidebar relative  z-30">
+        <div className="Sidebar relative z-30">
           <div className="flex gap-8 items-center justify-evenly">
             <div className="text-white m-1 text-left text-lg font-bold pt-3 ">
               Lean Traning Material

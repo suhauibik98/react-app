@@ -27,9 +27,9 @@ const Report = () => {
   const isImageClicked = (id) => clickedImages.includes(id);
 
   return (
-    <div>
+    <>
        <HomeRoute></HomeRoute>
-      <div className="flex flex-row relative w-full">
+      <div className="flex h-full flex-row relative w-full">
         <Lazyload src={main} className="" alt="1" />
         <div className="flex flex-col absolute imgIN ">
           <div
@@ -98,7 +98,7 @@ const Report = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

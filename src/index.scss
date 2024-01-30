@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
     --blue0: #024e72;
     --blue1: #047495;
@@ -47,8 +48,9 @@ body {
     background: #fff;
 }
 .Sidebar {
-    height: 100vh;
-    overflow-y: auto;
+    height: 100%;
+    overflow-y: unset;
+    position: relative;
 
     background: linear-gradient(117deg, var(--blue0) 0%, var(--blue1) 50%, var(--blue2) 100%);
     &::-webkit-scrollbar {
@@ -56,44 +58,65 @@ body {
         height: 0px;
     }
     &:before {
-    }
-}
-.ji {
-    &:before {
         content: "";
         display: block;
         position: absolute;
-        background-color: #024e7200;
-        left: 40px;
-        z-index: 1;
-        width: 480px;
-        height: 100%;
-        border-radius: 0;
-        background-image: radial-gradient(
-            circle at 1016px 475px,
-            rgb(0 0 0 / 0%) 0,
-            rgba(0, 0, 0, 0) 749px,
-            var(--blue1) 0
-
-        );
-        color: #fff;
-        &:before{
-            display: block;
-            position: absolute;
-            background-color: #024e7200;
-            left: 400px;
-            z-index: 1;
-            width: 480px;
-            height: 100%;
-        }
+        background-color: rgba(255, 0, 0, 0);
+        left: 382px;
+        width: 100px;
+        top: 0px;
+        height: 100px;
+        z-index: -1;
+        border-radius: 100px 0px 0px 0px;
+        box-shadow: -20px -20px 0px 20px #036c8d;
+    }
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        background-color: rgba(255, 0, 0, 0.004);
+        left: 382px;
+        width: 100px;
+        bottom: 0px;
+        height: 100px;
+        z-index: -1;
+        border-radius: 0px 0px 0px 97px;
+        box-shadow: -40px 19px 0px 17px #0B8999;
     }
 }
+
 .MenuIcon {
     position: absolute;
     background: linear-gradient(117deg, var(--blue0) 0%, var(--blue1) 50%, var(--blue2) 100%);
     height: 100%;
     text-align: center;
     width: inherit;
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        background-color: rgba(255, 0, 0, 0);
+        left: 96px;
+        width: 100px;
+        top: 1px;
+        height: 100px;
+        z-index: 1;
+        border-radius: 100px 0px 0px 0px;
+        box-shadow: -20px -20px 0px 20px #035b7e;
+    }
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        background-color: rgba(255, 0, 0, 0);
+        left: 96px;
+        width: 100px;
+        bottom: 0px;
+        height: 100px;
+        z-index: 1;
+        border-radius: 0px 0px 0px 100px;
+        box-shadow: -18px 18px 0px 17px #0A8598;
+    }
 }
 
 nav ul li {
@@ -101,15 +124,15 @@ nav ul li {
     padding: 20px 0;
 }
 
-img {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    max-height: inherit;
-    object-fit: cover;
-    object-position: center;
-    overflow-x: hidden !important;
-}
+// img {
+//     width: 100%;
+//     height: auto;
+//     max-width: 100%;
+//     max-height: inherit;
+//     object-fit: cover;
+//     object-position: center;
+//     overflow-x: hidden !important;
+// }
 .NavItem {
     background-color: var(--a);
     margin: 20px 0;
@@ -398,14 +421,18 @@ $ci: 3;
     bottom: 70px;
     left: 144px;
 }
-
-@media only screen and (max-width: 768px) {
-    .layout {
-        flex-direction: column;
-    }
-
-    .sidebar,
-    .body {
-        width: 100%;
-    }
+.checkerGreen{
+    position: absolute;
+    top: 0px;
 }
+
+// @media only screen and (max-width: 768px) {
+//     .layout {
+//         flex-direction: column;
+//     }
+
+//     .sidebar,
+//     .body {
+//         width: 100%;
+//     }
+// }

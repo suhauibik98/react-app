@@ -13,7 +13,6 @@ import ProcessMapping from "./pages/ProcessMapping";
 import Sidebar from "./components/Sidebar";
 import ConverVocTo from "./pages/convertVoc/ConverVocTo";
 import Questions from "./pages/convertVoc/Questions";
-import "./input.css";
 import "./index.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -51,8 +50,8 @@ function App() {
     <>
       <div className="layout">
         <Router>
-          <div className={`${"ji"}  ${sideWidth}`}>
-            <Sidebar sendToProps={handelSetToggle} />
+          <div className={`${""}  ${sideWidth}`}>
+            <Sidebar  sendToProps={handelSetToggle} />
           </div>
           <div className={`${""}  ${bodyWidth}`}>
             <Routes>
