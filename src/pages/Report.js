@@ -10,6 +10,7 @@ import cont4 from "../images/outComs/Asset4-1.png";
 import cont40 from "../images/outComs/Asset4-0.png";
 import HomeRoute from "../components/HomeRoute";
 import Lazyload from "../components/Lazyload";
+import Hovercom from "../components/Hovercom";
 const Report = () => {
   const [clickedImages, setClickedImages] = useState([]);
 
@@ -28,6 +29,7 @@ const Report = () => {
 
   return (
     <>
+    <Hovercom top={18} left={42} width={3}></Hovercom>
        <HomeRoute></HomeRoute>
       <div className="flex h-full flex-row relative w-full">
         <Lazyload src={main} className="" alt="1" />

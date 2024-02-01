@@ -32,7 +32,7 @@ const ProcessMapping = () => {
       <LazyLoadComponent>
         <div className="container flex items-center h-full">
           <div className="flex justify-center items-center">
-            <div className=" flex absolute  ">
+            <div className=" flex absolute top-[13em] ">
               <div className="flex gap-[130px] nthChild">
                 <Link to="/Devmap" className="pp-1" onClick={handelclick_A}>
                   <Lazyload src={m1} className="" alt="Image1" />

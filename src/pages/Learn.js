@@ -30,7 +30,7 @@ const Learn = () => {
           </Link>
           {contant}
         </div>
-        <div className="absolute bottom-36 -z-10">
+        <div className="absolute bottom-[8.3em] -z-10">
           <Lazyload src={main} alt="6" />
         </div>
       </div>

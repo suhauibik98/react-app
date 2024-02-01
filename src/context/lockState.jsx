@@ -12,6 +12,7 @@ import {
   CLICK_BUTTON_C,
   CLICK_BUTTON_D,
   GEMBA_BUTTON_UNLOCK,
+  CLICK_BUTTON_NEXT
 } from "./actions";
 const LockContext = createContext();
 const initialState = {
@@ -20,6 +21,7 @@ const initialState = {
   c: false,
   d: false,
   unLock: false,
+  next:true
 };
 
 export const LockProvider = ({ children }) => {
@@ -44,8 +46,11 @@ export const LockProvider = ({ children }) => {
   const GEMBA_UNLOCK = () => {
     dispatch({ type: GEMBA_BUTTON_UNLOCK });
   };
+  const CLICK_NEXT = () => {
+    dispatch({ type: CLICK_BUTTON_NEXT });
+  };
 
-  const handelShowQ =  () => {
+  const handelShowQ = () => {
     if (stats.a && stats.b && stats.c && stats.d) {
       setQ(true);
     }
@@ -69,6 +74,7 @@ export const LockProvider = ({ children }) => {
     handelclick_C,
     handelclick_D,
     GEMBA_UNLOCK,
+    CLICK_NEXT
   };
   return (
     <LockContext.Provider value={valueToSend}>{children}</LockContext.Provider>

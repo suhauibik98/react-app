@@ -12,6 +12,7 @@ import ThreeAs from "./pages/ThreeAs";
 import ProcessMapping from "./pages/ProcessMapping";
 import Sidebar from "./components/Sidebar";
 import ConverVocTo from "./pages/convertVoc/ConverVocTo";
+import Vdc from "./pages/convertVoc/Vdc";
 import Questions from "./pages/convertVoc/Questions";
 import "./index.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -25,6 +26,8 @@ import Qustion from "./pages/gemba/Qustion";
 import GambaBar from "./pages/gemba/GambaBar";
 import VideoGemba from "./pages/gemba/VideoGemba";
 import ToolSummary from "./pages/ToolSummary";
+import Ctq from "./pages/convertVoc/Ctq";
+import QuestionsTow from "./pages/convertVoc/QuestionsTow";
 
 function App() {
   const [toggle, setToggle] = useState(false);
@@ -55,7 +58,7 @@ function App() {
           </div>
           <div className={`${""}  ${bodyWidth}`}>
             <Routes>
-              <Route path="/" element={<Home />}></Route>
+              <Route path="/" exact element={<Home />}></Route>
               <Route path="/outcomes" element={<Report />}></Route>
               <Route path="/Leran" element={<Learn />}></Route>
               <Route path="/Demings" element={<Demings />}></Route>
@@ -69,6 +72,9 @@ function App() {
               {/* Convert VOC to CTQ */}
               <Route path="/ConverVocTo" element={<ConverVocTo />}></Route>
               <Route path="/Questions" element={<Questions />}></Route>
+              <Route path="/Vdc" element={<Vdc/>}></Route>
+              <Route path="/Ctq" element={<Ctq/>}></Route>
+              <Route path="/QustionTwo" element={<QuestionsTow/>}></Route>
               {/* Defining proplem */}
               <Route path="/deminges/Demings1" element={<Demings1 />}></Route>
               <Route path="/deminges/Demings2" element={<Demings2 />}></Route>

@@ -8,13 +8,17 @@ import c1 from "../../images/gemba/GembaP67/Edit/Artboardc1.png";
 import c2 from "../../images/gemba/GembaP67/Edit/Artboardc2.png";
 import c3 from "../../images/gemba/GembaP67/Edit/Artboardc3.png";
 import HomeRoute from "../../components/HomeRoute";
+import Hovercom from "../../components/Hovercom";
 const GambaBar = () => {
   const [gif, setGif] = useState(gif1);
   const changeGif = (gif) => {
     setGif(gif);
   };
   return (
-    <><HomeRoute></HomeRoute>
+    <>
+        <Hovercom top={18} left={95} width={3}></Hovercom>
+
+    <HomeRoute></HomeRoute>
       <div className="container relative">
         <Lazyload src={main}></Lazyload>
         <div className="flex justify-center items-center">

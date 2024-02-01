@@ -6,13 +6,21 @@ import HomeRoute from "../components/HomeRoute";
 const Home = () => {
   return (
     <>
-      <div className="h-full ">
-        <div className="h-full" >
-          <Lazyload src={main} className=" w-full h-full object-cover absolute top-0 right-0" alt="l" />
-        </div>
+      <div className="relative h-screen">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Lazyload
+            src={main}
+            className="w-full h-full object-cover"
+            alt="Background"
+          />
 
-        <div className="absolute bottom-20 w-[45rem]">
-          <Lazyload src={model} alt="io" />
+          {/* Model Image */}
+          <div className="absolute top-[50%] left-0 w-full sm:w-[45%]">
+            <div className="relative">
+              <Lazyload src={model} alt="Model" className="w-full" />
+            </div>
+          </div>
         </div>
       </div>
     </>

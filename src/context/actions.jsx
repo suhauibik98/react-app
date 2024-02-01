@@ -3,6 +3,7 @@ export const CLICK_BUTTON_B = "CLICK_BUTTON_B";
 export const CLICK_BUTTON_C = "CLICK_BUTTON_C";
 export const CLICK_BUTTON_D = "CLICK_BUTTON_D";
 export const CLICK_BUTTON_E = "CLICK_BUTTON_E";
+export const CLICK_BUTTON_NEXT = "CLICK_BUTTON_NEXT";
 export const GEMBA_BUTTON_UNLOCK = "GEMBA_BUTTON_UNLOCK";
 
 

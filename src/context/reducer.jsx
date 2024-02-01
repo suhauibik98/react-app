@@ -1,4 +1,4 @@
-import  { CLICK_BUTTON_A,CLICK_BUTTON_B,CLICK_BUTTON_C,CLICK_BUTTON_D,GEMBA_BUTTON_UNLOCK } from "./actions";
+import  { CLICK_BUTTON_A,CLICK_BUTTON_B,CLICK_BUTTON_C,CLICK_BUTTON_D,GEMBA_BUTTON_UNLOCK,CLICK_BUTTON_NEXT } from "./actions";
 
 const reducer = (state, action) => {
   if (action.type === CLICK_BUTTON_A) {
@@ -15,6 +15,9 @@ const reducer = (state, action) => {
   }
   if (action.type === GEMBA_BUTTON_UNLOCK) {
     return { unLock: true };
+  }
+  if (action.type === CLICK_BUTTON_NEXT) {
+    return { next: false };
   }
   throw new Error (`this action :  ${action.type}`)
 };

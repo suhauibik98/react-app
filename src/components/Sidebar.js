@@ -93,7 +93,7 @@ useEffect(()=>{
           <div className="flex gap-8 items-center justify-evenly">
             <div className="text-white m-1 text-left text-lg font-bold pt-3 ">
               Lean Traning Material
-              <div className="text-center">Module 1</div>
+              <div className="text-center">Module 2</div>
             </div>
             <CloseIcon
               onClick={handelSidebar}
@@ -108,7 +108,7 @@ useEffect(()=>{
                   <div className={`${"NavItem"} ${active === val.path ? "active" : ""} `} key={key} >
                     
                     <Link to={goTopath(val.path)}>
-                      <li onClick={() => swipper(key)} className="text-3xl no-underline text-white font-medium " >
+                      <li onClick={() => swipper(key)} className="text-2xl no-underline text-white font-medium " >
                         <div>{val.title}  {addIconLock(key)}</div>
                       </li>
                     </Link>

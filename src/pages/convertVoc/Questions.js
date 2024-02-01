@@ -1,108 +1,104 @@
-// import React from 'react'
-
-// const Questions = () => {
-//   return (
-//     <div>
-//       qusu
-      
-//     </div>
-//   )
-// }
-
-// export default Questions
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import HomeRoute from "../../components/HomeRoute";
+import check from "../../images/gemba/Question68-69/Asset1-8.png";
+import check2 from "../../images/gemba/Question68-69/Asset2-8.png";
+import bar from "../../images/gemba/Question68-69/Artboard76-8.png";
+import barF from "../../images/gemba/Question68-69/Artboard762-8.png";
+import barT from "../../images/gemba/Question68-69/Artboard76.png";
+import q1 from "../../images/convertToVoc/Question78/Artboardq1.png";
+import A1 from "../../images/convertToVoc/Question78/Asset1.png";
+import A2 from "../../images/convertToVoc/Question78/Asset2.png";
+import A3 from "../../images/convertToVoc/Question78/Asset3.png";
+import A4 from "../../images/convertToVoc/Question78/Asset4.png";
+import { Link } from 'react-router-dom';
 
 const Questions = () => {
-  const questions = [
-    {
-      question: 'What is your favorite color?',
-      options: ['Red', 'Blue', 'Green', 'Yellow'],
-      correctAnswer: 2,
-    },
-    {
-      question: 'How old are you?',
-      options: ['Under 18', '18-24', '25-34', '35+'],
-      correctAnswer: 2,
-    },
-  ];
+  const [clickIndex, setIndex] = useState(null);
+  const [pop, setPop] = useState(false);
+  const [popD, setPopD] = useState(true);
+  const [next, setNext] = useState("");
 
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [selectedAnswer, setSelectedAnswer] = useState(null);
-  const [showResult, setShowResult] = useState(false);
-
-  const handleNextQuestion = () => {
-    if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
-      setSelectedAnswer(null);
-      setShowResult(false);
-    }
+  const handelClick = (index) => {
+    setIndex(index);
   };
 
-  const handleAnswerSelection = (index) => {
-    setSelectedAnswer(index);
-    checkAnswer(index);
-  };
 
-  const checkAnswer = (selectedOption) => {
-    if (selectedOption === questions[currentQuestionIndex].correctAnswer) {
-      alert('Correct Answer!');
-    } else {
-      alert('Incorrect Answer!');
-      setShowResult(true);
-    }
+  const handlePopupSubmit = () => {
+    setPop(true);
+    setPopD(false);
   };
-
-  const reloadQuestion = () => {
-    setShowResult(false);
-  };
-
+  const q1Images = [A1, A2, A3, A4];
+  let barTrue = (
+    <>
+      <div className="hotSpot"></div>
+      <div className="absolute" style={{ bottom: "-5.3em", zIndex: "100" }}>
+        <img src={barT} alt="4"></img>
+        <Link to="/QustionTwo">
+        <button className="RloadBtn">NEXT</button></Link>
+      </div>
+    </>
+  );
+  let barFalse = (
+    <>
+      <div className="hotSpot"></div>
+      <div className="absolute" style={{ bottom: "-5.3em", zIndex: "100" }}>
+        <img src={barF} alt="4"></img>
+        <button
+          className="RloadBtn"
+          onClick={() => {
+            window.location.reload();
+          }}
+        >
+          Reload
+        </button>
+      </div>
+    </>
+  );
   return (
-    <div className="w-full  mx-auto mt-10 p-6 bg-white rounded-md shadow-md">
-      <h1 className="text-2xl font-semibold mb-4">
-        {questions[currentQuestionIndex].question}
-      </h1>
-      <ul className="mb-4">
-        {questions[currentQuestionIndex].options.map((option, index) => (
-          <li key={index} className="mb-2">
-            <input
-              type="radio"
-              id={index}
-              name="answerOptions"
-              value={index}
-              checked={selectedAnswer === index}
-              onChange={() => handleAnswerSelection(index)}
-              className="mr-2"
-            />
-            <label htmlFor={index}>{option}</label>
-          </li>
-        ))}
-      </ul>
-      {showResult ? (
-        <div>
-          <p className="text-red-500 mb-2">
-            Incorrect Answer! Try again or proceed to the next question.
-          </p>
-          <button
-            onClick={reloadQuestion}
-            className="bg-blue-500 text-white px-4 py-2 rounded-md mr-2"
-          >
-            Reload Question
-          </button>
-        </div>
-      ) : (
-        <div>
-          {currentQuestionIndex < questions.length - 1 && (
-            <button
-              onClick={handleNextQuestion}
-              className="bg-blue-500 text-white px-4 py-2 rounded-md mr-2"
-            >
-              Next Question
-            </button>
-          )}
-        </div>
-      )}
-    </div>
+   <>
+     <HomeRoute></HomeRoute>
+     <div className="container flex flex-col relative">
+       <div
+         className="bg-cover bg-center w-full h-full"
+         style={{ backgroundImage: `url(${q1})` }}
+       ></div>
+
+       <div className="flex flex-col items-baseline absolute gap-8 left-36 cursor-pointer ">
+         {q1Images.map((src, index) => (
+           <div key={index} className="relative">
+             <img src={src} alt="1" onClick={() => handelClick(index)} />
+             {clickIndex === index && (
+               <img src={check} className="checkerGreen" alt="5"></img>
+             )}
+             {clickIndex !== index && pop && (
+               <img src={check2} className="checkerGreen" alt="25"></img>
+             )}
+           </div>
+         ))}
+       </div>
+       <button
+         className="submit-button"
+         style={{ zIndex: 101, bottom: "5em" }}
+         onClick={handlePopupSubmit}
+       >
+         Submit
+       </button>
+       <div className="relative " style={{ width: "100%" }}>
+         {popD && (
+           <img
+             src={bar}
+             className="absolute"
+             style={{ bottom: "-5.3em", zIndex: "100" }}
+             alt="a"
+           />
+         )}
+         {pop && <>{clickIndex === 1 ? barTrue : barFalse}</>}
+       </div>
+     </div>
+  
+
+   
+   </>
   );
 };
-
 export default Questions;

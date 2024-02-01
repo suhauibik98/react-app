@@ -27,15 +27,28 @@ const Qustion = () => {
   };
 
   let barTrue = (
-    <div className="absolute" style={{ bottom: "-5em", zIndex: "100" }}>
-      <img src={barT} alt="4"></img>
-    </div>
+    <>
+      <div className="hotSpot"></div>
+      <div className="absolute" style={{ bottom: "-5.3em", zIndex: "100" }}>
+        <img src={barT} alt="4"></img>
+      </div>
+    </>
   );
   let barFalse = (
-    <div className="fixed bg-red-600 ">
-    <div className="absolute" style={{ bottom: "-5em", zIndex: "100" }}>
-      <img src={barF} alt="4"></img>
-    </div></div>
+    <>
+      <div className="hotSpot"></div>
+      <div className="absolute" style={{ bottom: "-5.3em", zIndex: "100" }}>
+        <img src={barF} alt="4"></img>
+        <button
+          className="RloadBtn"
+          onClick={() => {
+            window.location.reload();
+          }}
+        >
+          Reload
+        </button>
+      </div>
+    </>
   );
   return (
     <>
@@ -86,13 +99,13 @@ const Qustion = () => {
             <img
               src={bar}
               className="absolute"
-              style={{ bottom: "-5em", zIndex: "100" }}
+              style={{ bottom: "-5.3em", zIndex: "100" }}
               alt="a"
             />
           )}
           {pop && <>{clickIndex === 1 ? barTrue : barFalse}</>}
         </div>
-      </div>{" "}
+      </div>
     </>
   );
 };
