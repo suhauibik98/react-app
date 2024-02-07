@@ -6,28 +6,24 @@ import rep from "../../src/images/button/buttonRep.gif";
 import Lazyload from "./Lazyload";
 import { LazyLoadComponent } from "react-lazy-load-image-component";
 const HomeRoute = () => {
- 
-  const reload =()=>{
-       window.location.reload();
-  }
+  const reload = () => {
+    window.location.reload();
+  };
   return (
     <>
-    <LazyLoadComponent>
-      <div
-        className="flex gap-2 z-40 m-9 flex-row-reverse absolute right-0 top-0 "
-        style={{ width: "150px" }}
-      >
-        <Link to="/">
-          <Lazyload  src={home} alt="4"></Lazyload>
-        </Link>
-        <Link onClick={reload}> 
-          <Lazyload src={rep} alt="4"></Lazyload>
-        </Link>
-        <Link>
-          <Lazyload src={info} alt="4"></Lazyload>
-        </Link>
+      <div className="flex absolute right-[1%] top-[1%] w-[12%] z-10  ">
+        <div className="relative flex">
+          <Link>
+            <Lazyload src={info} alt="4"></Lazyload>
+          </Link>
+          <Link onClick={reload}>
+            <Lazyload src={rep} alt="4"></Lazyload>
+          </Link>
+          <Link to="/">
+            <Lazyload src={home} alt="4"></Lazyload>
+          </Link>
+        </div>
       </div>
-      </LazyLoadComponent>
     </>
   );
 };

@@ -51,7 +51,7 @@ function App() {
 
   return (
     <>
-      <div className="layout">
+      <div className="layout" style={{width:"inherit", height:"inherit"}}>
         <Router>
           <div className={`${""}  ${sideWidth}`}>
             <Sidebar  sendToProps={handelSetToggle} />

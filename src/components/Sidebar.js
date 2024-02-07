@@ -11,6 +11,7 @@ function Sidebar({ sendToProps }) {
 
 
   const location = useLocation();
+  
   const handelSidebar = () => {
     setOpen((prev) => !prev);
     sendToProps(open);
@@ -21,8 +22,7 @@ function Sidebar({ sendToProps }) {
   }, [location.pathname]);
 
 
-
-  var lockIcon = <span className="right-5 absolute"> <LockOpenIcon fontSize="large"></LockOpenIcon></span>
+  var lockIcon = <span className="right-5 absolute"> <LockOpenIcon className="icon"></LockOpenIcon></span>
 const addIconLock =(key)=>{
   if(key === 8 ){
     return lockIcon
@@ -31,7 +31,7 @@ const addIconLock =(key)=>{
 }
 const goTopath=(value)=>{
   if (value ===  "/Test" && state8){
-    lockIcon = <span className="right-5 absolute "> <LockIcon fontSize="large"></LockIcon></span>    
+    lockIcon = <span className="right-5 absolute "> <LockIcon className="icon"></LockIcon></span>    
     return location.pathname ;
   }
   else{
@@ -81,24 +81,25 @@ useEffect(()=>{
   return (
     <>
       {!open && (
-        <div className="MenuIcon text-white p-1 ">
+        <div className="MenuIcon  text-white p-1 ">
           <MenuIcon
             onClick={handelSidebar}
             style={{ fontSize: "40px", cursor: "pointer" }}
+            className="icon"
           />
         </div>
       )}
       {open && (
         <div className="Sidebar relative z-30">
-          <div className="flex gap-8 items-center justify-evenly">
-            <div className="text-white m-1 text-left text-lg font-bold pt-3 ">
+          <div className="flex flex-nowrap items-center justify-evenly">
+            <div className="text-white  text-left text-[1vw] font-bold pt-3 ">
               Lean Traning Material
               <div className="text-center">Module 2</div>
             </div>
             <CloseIcon
               onClick={handelSidebar}
               style={{ cursor: "pointer" }}
-              className="text-white h-6 m-1 icon"
+              className="text-white icon"
             />
           </div>
           <nav>
@@ -108,7 +109,7 @@ useEffect(()=>{
                   <div className={`${"NavItem"} ${active === val.path ? "active" : ""} `} key={key} >
                     
                     <Link to={goTopath(val.path)}>
-                      <li onClick={() => swipper(key)} className="text-2xl no-underline text-white font-medium " >
+                      <li onClick={() => swipper(key)} className="text-[1.2vw] no-underline text-white font-medium " >
                         <div>{val.title}  {addIconLock(key)}</div>
                       </li>
                     </Link>

@@ -10,12 +10,14 @@ import barF from "../../images/gemba/Question68-69/Artboard762-8.png";
 import barT from "../../images/gemba/Question68-69/Artboard76.png";
 import { useState } from "react";
 import HomeRoute from "../../components/HomeRoute";
+import mainbg from "../../images/1.jpg";
+import Lazyload from "../../components/Lazyload";
 
 const Qustion = () => {
   const [clickIndex, setIndex] = useState(null);
   const [pop, setPop] = useState(false);
   const [popD, setPopD] = useState(true);
-  const images = [A1, A2, A3, A4];
+  const images = [A2, A4, A2, A4];
   const handelClick = (index) => {
     console.log(index);
     setIndex(index);
@@ -29,16 +31,16 @@ const Qustion = () => {
   let barTrue = (
     <>
       <div className="hotSpot"></div>
-      <div className="absolute" style={{ bottom: "-5.3em", zIndex: "100" }}>
-        <img src={barT} alt="4"></img>
+      <div className="inset-0" style={{ zIndex: "100" }}>
+        <Lazyload src={barT} WH={100} alt="4"></Lazyload>
       </div>
     </>
   );
   let barFalse = (
     <>
-      <div className="hotSpot"></div>
-      <div className="absolute" style={{ bottom: "-5.3em", zIndex: "100" }}>
-        <img src={barF} alt="4"></img>
+      <div className="hotSpot "></div>
+      <div className="inset-0" style={{ zIndex: "100" }}>
+        <Lazyload src={barF} WH={100} alt="4"></Lazyload>
         <button
           className="RloadBtn"
           onClick={() => {
@@ -53,25 +55,18 @@ const Qustion = () => {
   return (
     <>
       <HomeRoute />
-      <div className="container flex flex-col relative ">
-        <div
+      <div className=" relative  w-full h-full ">
+        <Lazyload Style={"absolute inset-0 "} src={main}></Lazyload>
+        <Lazyload Style={"opacity-0 inset-0 h-[100%]"} WH={100} src={mainbg}></Lazyload>
+        {/* <div
           className="bg-cover bg-center w-full h-full  "
           style={{ backgroundImage: `url(${main})` }}
-        ></div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "baseline",
-            position: "absolute",
-            gap: "2em",
-            left: "200px",
-            cursor: "pointer",
-          }}
-        >
+        ></div> */}
+        <div className="absolute top-[16vw] left-[8vw] cursor-pointer w-[40%]">
           {images.map((src, index) => (
-            <div key={index} className="relative">
-              <img
+            <div key={index} className="flex mb-[0.5vh] relative">
+              <Lazyload
+                Style={""}
                 src={src}
                 onClick={() => {
                   handelClick(index);
@@ -87,24 +82,16 @@ const Qustion = () => {
             </div>
           ))}
         </div>
-        <button
-          className="submit-button"
-          style={{ zIndex: 101, bottom: "5em" }}
-          onClick={handlePopupSubmit}
-        >
+        <div className="relative bottom-[34%] left-[50%]" >
+        <button className="submit-button" onClick={handlePopupSubmit}>
           Submit
         </button>
-        <div className="relative " style={{ width: "100%" }}>
-          {popD && (
-            <img
-              src={bar}
-              className="absolute"
-              style={{ bottom: "-5.3em", zIndex: "100" }}
-              alt="a"
-            />
-          )}
-          {pop && <>{clickIndex === 1 ? barTrue : barFalse}</>}
         </div>
+        <div className="absolute  bottom-0">
+        <div className="relative ">
+          {popD && <Lazyload WH={100} src={bar} alt="a" />}
+          {pop && <>{clickIndex === 1 ? barTrue : barFalse}</>}
+        </div></div>
       </div>
     </>
   );
